@@ -1,7 +1,11 @@
 {
   "name": "contactus",
   "version": "0.0.1",
+  "devDependencies": {
+    "@types/material-ui": "^0.21.12"
+  },
   "dependencies": {
-    "styled-components": "^5.0.0"
+    "@mantine/core": "^5.10.3",
+    "@mui/material": "^5.11.6"
   }
 }

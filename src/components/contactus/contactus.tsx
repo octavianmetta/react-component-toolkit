@@ -1,20 +1,52 @@
 import React, { useState } from "react";
-import "./ContactForm.css"; // Import file CSS
 import { ContactUsProps } from "./contactus.types";
-import { TextField, ThemeProvider, createTheme, styled } from "@mui/material";
+import {
+  Button,
+  InputLabel,
+  TextField,
+  ThemeProvider,
+  createTheme,
+  styled,
+} from "@mui/material";
 
 const theme = createTheme({
   typography: {
     fontFamily: ["Arial"].join(","),
   },
 });
-
+const Title = styled("h4")({
+  color: "#c2141c",
+  fontSize: "28px",
+  fontFamily: "Arial",
+  fontWeight: 700,
+  lineHeight: "32px",
+  wordWrap: "break-word",
+});
 const ContactUsTextField = styled(TextField)({
-  borderColor: "#dadee3",
-  borderWidth: 1,
-  borderRadius: "30px",
-  marginTop: 10,
-  marginBottom: 10,
+  "& .MuiOutlinedInput-root": {
+    borderColor: "#dadee3",
+    borderRadius: "30px",
+    marginTop: 10,
+    marginBottom: 10,
+    "&:hover fieldset": {
+      borderColor: "#dadee3", // warna border saat hover
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "red", // warna border saat fokus
+    },
+  },
+});
+
+const SubmitButton = styled(Button)({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 16,
+  padding: "7px 20px",
+  backgroundColor: "#09101D",
+  fontFamily: ["Arial"].join(","),
+  "&:hover": {
+    backgroundColor: "#C2141C",
+  },
 });
 
 const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
@@ -74,14 +106,14 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <h4>{props.title}</h4>
-        <form onSubmit={handleSubmit}>
+        <Title>{props.title}</Title>
+        <form onSubmit={handleSubmit} style={{ textAlign: "right" }}>
           <ContactUsTextField
             fullWidth
             variant="outlined"
             type="text"
             name="name"
-            label="Name"
+            placeholder="Name"
             value={formData.name}
             onChange={handleChange}
             error={formErrors.name}
@@ -90,6 +122,7 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
                 borderRadius: "8px",
               },
             }}
+            InputLabelProps={{ style: { color: "#dadee3" } }}
             helperText={formErrors.name ? "Required" : ""}
           />
 
@@ -98,11 +131,12 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
             variant="outlined"
             type="tel"
             name="phone"
-            label="Phone Number"
+            placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
             error={formErrors.phone}
             helperText={formErrors.phone ? "Required" : ""}
+            InputLabelProps={{ style: { color: "#dadee3" } }}
             InputProps={{
               style: {
                 borderRadius: "8px",
@@ -114,11 +148,12 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
             variant="outlined"
             type="text"
             name="subject"
-            label="Subject"
+            placeholder="Subject"
             value={formData.subject}
             onChange={handleChange}
             error={formErrors.subject}
             helperText={formErrors.subject ? "Required" : ""}
+            InputLabelProps={{ style: { color: "#dadee3" } }}
             InputProps={{
               style: {
                 borderRadius: "8px",
@@ -131,11 +166,12 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
             multiline
             rows={4}
             name="notes"
-            label="Note"
+            placeholder="Note"
             value={formData.notes}
             onChange={handleChange}
             error={formErrors.notes}
             helperText={formErrors.notes ? "Required" : ""}
+            InputLabelProps={{ style: { color: "#dadee3" } }}
             InputProps={{
               style: {
                 borderRadius: "8px",
@@ -144,7 +180,9 @@ const ContactForm: React.FC<ContactUsProps> = ({ ...props }) => {
           />
           <br />
           <br />
-          <input type="submit" value="Submit" />
+          <SubmitButton variant="contained" type="submit">
+            Submit
+          </SubmitButton>
         </form>
       </div>
     </ThemeProvider>

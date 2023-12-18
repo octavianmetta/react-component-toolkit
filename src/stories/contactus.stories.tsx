@@ -17,7 +17,7 @@ export const ContactUs: Story<ContactUsProps> = ({
 );
 
 ContactUs.args = {
-  id: "Contact Us",
+  id: "ContactUs",
   title: "Jangan ragu untuk mengirim pesan pada kami",
-  contactEmail: "mail@gmail.com",
+  contactEmail: "mail@gmail.com"
 };
