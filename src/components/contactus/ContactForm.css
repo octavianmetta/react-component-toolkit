@@ -1,8 +1,8 @@
 /* Gaya untuk input */
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
-input[type="tel"],
-textarea {
+input[type="tel"], */
+/* textarea {
   color: #000;
   font-size: 16px;
   font-family: Arial;
@@ -12,21 +12,21 @@ textarea {
   padding: 10px;
   display: block;
   width: 100%;
-  max-width: 100%; /* Atur lebar maksimum sesuai dengan lebar form */
-  box-sizing: border-box; /* Menghitung padding dan border dalam lebar total elemen */
+  max-width: 100%;
+  box-sizing: border-box; 
 
   margin-bottom: 15px;
   border: 1px solid #dadee3;
   border-radius: 8px;
-}
+} */
 
 /* Gaya untuk placeholder */
-input[type="text"]::placeholder,
+/* input[type="text"]::placeholder,
 input[type="email"]::placeholder,
-input[type="tel"]::placeholder,
-textarea::placeholder {
+input[type="tel"]::placeholder, */
+/* textarea::placeholder {
   color: #dadee3;
-}
+} */
 
 /* Gaya untuk tombol kirim */
 input[type="submit"] {
@@ -63,6 +63,5 @@ h4 {
 form {
   text-align: right; /* Mengatur posisi konten dalam form menjadi ke kanan */
 
-  outline: 1px solid red; /* Menampilkan outline pada elemen form */
   max-width: 500px; /* Atur lebar maksimum form */
 }
