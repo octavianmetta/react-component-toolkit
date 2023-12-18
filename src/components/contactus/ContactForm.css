@@ -1,0 +1,68 @@
+/* Gaya untuk input */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  color: #000;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 25px;
+  word-wrap: break-word;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  max-width: 100%; /* Atur lebar maksimum sesuai dengan lebar form */
+  box-sizing: border-box; /* Menghitung padding dan border dalam lebar total elemen */
+
+  margin-bottom: 15px;
+  border: 1px solid #dadee3;
+  border-radius: 8px;
+}
+
+/* Gaya untuk placeholder */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: #dadee3;
+}
+
+/* Gaya untuk tombol kirim */
+input[type="submit"] {
+  padding: 15px 20px;
+  border: none;
+  background: #09101d;
+  color: white;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #0e162e;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h4 {
+  color: #c2141c;
+  font-size: 28px;
+  font-family: Arial;
+  font-weight: 700;
+  line-height: 32px;
+  word-wrap: break-word;
+}
+
+/* Gaya untuk menempatkan tombol submit di kanan */
+form {
+  text-align: right; /* Mengatur posisi konten dalam form menjadi ke kanan */
+
+  outline: 1px solid red; /* Menampilkan outline pada elemen form */
+  max-width: 500px; /* Atur lebar maksimum form */
+}

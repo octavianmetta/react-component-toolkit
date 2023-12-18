@@ -12,7 +12,6 @@ import dts from "rollup-plugin-dts";
 const D3_WARNING = /Circular dependency.*d3-interpolate/
 
 const directImports = {
-    contactus: 'src/components/contactus/index.ts',
     listofapis: 'src/components/listofapis/index.ts',
     bingmaps: 'src/components/bingmaps/index.ts',
     common: 'src/components/common/index.ts',
